@@ -43,10 +43,26 @@ def get_configured_api_key(custom_key: Optional[str] = None) -> Tuple_Key_Provid
     if os.path.exists(ENV_PATH):
         load_dotenv(ENV_PATH, override=True)
 
-    # Check environment variables
-    gemini_key = os.environ.get("GEMINI_API_KEY", "").strip()
-    openai_key = os.environ.get("OPENAI_API_KEY", "").strip()
-    preferred_provider = os.environ.get("LLM_PROVIDER", "gemini").lower()
+    # 1. Check Streamlit Cloud Secrets (if running on Streamlit Community Cloud)
+    gemini_key = ""
+    openai_key = ""
+    preferred_provider = "gemini"
+    try:
+        import streamlit as st
+        if hasattr(st, "secrets"):
+            gemini_key = str(st.secrets.get("GEMINI_API_KEY", "")).strip()
+            openai_key = str(st.secrets.get("OPENAI_API_KEY", "")).strip()
+            preferred_provider = str(st.secrets.get("LLM_PROVIDER", "gemini")).lower()
+    except Exception:
+        pass
+
+    # 2. Fall back to environment variables (.env)
+    if not gemini_key:
+        gemini_key = os.environ.get("GEMINI_API_KEY", "").strip()
+    if not openai_key:
+        openai_key = os.environ.get("OPENAI_API_KEY", "").strip()
+    if preferred_provider == "gemini" and os.environ.get("LLM_PROVIDER"):
+        preferred_provider = os.environ.get("LLM_PROVIDER", "gemini").lower()
 
     if preferred_provider == "openai" and openai_key:
         return openai_key, "openai"
