@@ -1,0 +1,24 @@
+Job Title: Full-Stack AI / Python Engineer
+Company: CloudScale Innovations
+Location: San Francisco, CA / Remote
+
+About the Role:
+We are looking for a talented Full-Stack AI Engineer to build scalable web applications and intelligent data pipelines. In this role, you will design robust REST APIs, train and deploy machine learning models, and collaborate with cross-functional teams to deliver production-ready software.
+
+Responsibilities:
+- Develop, test, and maintain backend microservices using Python, FastAPI, and Flask.
+- Build clean, interactive, and responsive user interfaces using React and modern JavaScript.
+- Train, evaluate, and integrate Machine Learning and NLP models using Scikit-learn and PyTorch.
+- Design and optimize relational and NoSQL database schemas using PostgreSQL and Redis.
+- Implement CI/CD deployment pipelines using Docker, GitHub Actions, and AWS cloud infrastructure.
+- Write clean, maintainable, and well-tested code following Agile and Scrum methodologies.
+- Collaborate with product managers, UI/UX designers, and fellow engineers with strong communication and problem-solving skills.
+
+Qualifications & Requirements:
+- Bachelor's or Master's degree in Computer Science, Software Engineering, or related technical field.
+- 2+ years of hands-on experience in Python backend development.
+- Strong proficiency in SQL, PostgreSQL, Git, and REST API development.
+- Practical experience with Machine Learning, Pandas, NumPy, and Scikit-learn.
+- Familiarity with Docker containerization and AWS (S3, EC2, Lambda).
+- Experience with frontend development using React and HTML/CSS is a strong plus.
+- Excellent communication, teamwork, and analytical thinking abilities.

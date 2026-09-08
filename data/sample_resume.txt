@@ -1,0 +1,38 @@
+Alex Rivera
+San Francisco, CA | (555) 019-2834 | alex.dev.sample@example.com | linkedin.com/in/sample-alex | github.com/sample-alex
+
+PROFESSIONAL SUMMARY
+Results-driven Software Engineer with 3+ years of experience building scalable web backends, data pipelines, and machine learning solutions. Proficient in Python, SQL, REST APIs, and modern cloud deployment with Docker. Adept at collaborative Agile development, problem solving, and writing clean, maintainable code.
+
+EDUCATION
+Bachelor of Science in Computer Science
+State University of California, 2018 - 2022
+GPA: 3.8 / 4.0
+
+TECHNICAL SKILLS
+- Programming Languages: Python, SQL, JavaScript, C++
+- Frameworks & Libraries: FastAPI, Flask, Pandas, NumPy, Scikit-learn, PyTorch
+- Databases: PostgreSQL, SQLite, Redis
+- Cloud & Tools: Docker, Git, GitHub, Linux, VS Code, Postman
+- Soft Skills: Communication, Teamwork, Problem Solving, Agile, Critical Thinking
+
+WORK EXPERIENCE
+Software Engineer | DataFlow Tech Solutions | 2022 - Present
+- Architected and deployed 12+ REST API endpoints using Python and FastAPI, reducing response latency by 32%.
+- Engineered automated data extraction and NLP pipelines using Pandas and Scikit-learn, processing over 100,000 records daily.
+- Optimized PostgreSQL relational queries and database indexing, cutting query execution times by 40%.
+- Containerized microservices using Docker and maintained automated Git CI/CD workflows for seamless staging deployments.
+- Collaborated across cross-functional engineering teams in bi-weekly Agile sprints to deliver product milestones on schedule.
+
+Junior Developer Intern | Nexus Systems | 2021 - 2022
+- Developed responsive web dashboard features using JavaScript, HTML5, and CSS3.
+- Integrated automated unit tests and integration tests, increasing codebase test coverage by 25%.
+- Authored technical documentation and API specifications using Postman and Markdown.
+
+KEY PROJECTS
+- Intelligent Document Matcher: Built an NLP-based text similarity application using Python, Scikit-learn, and TF-IDF to compare technical documents with 92% retrieval accuracy.
+- Distributed Task Queue: Developed an asynchronous job runner using Python, Redis, and SQLite handling up to 5,000 background worker tasks per hour.
+
+CERTIFICATIONS
+- Python Data Science Certification - Coursera (2022)
+- Docker Essentials: A Developer Introduction (2023)
