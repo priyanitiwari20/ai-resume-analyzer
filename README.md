@@ -253,6 +253,52 @@ http://localhost:8501
 
 ---
 
+## 🚀 Deploying to Streamlit Community Cloud
+
+The project is pre-configured for **one-click deployment** to [Streamlit Community Cloud](https://share.streamlit.io).
+
+### Step 1: Push Code to GitHub
+1. Make sure your local repository is committed and pushed to your GitHub account:
+   ```bash
+   git add .
+   git commit -m "Configure production Streamlit deployment"
+   git push origin main
+   ```
+
+### Step 2: Create App on Streamlit Cloud
+1. Log in to [Streamlit Community Cloud](https://share.streamlit.io/) with your GitHub account.
+2. Click **"New app"** (or **"Create app"**).
+3. Select your repository: `<your-username>/ai-resume-analyzer`.
+4. Set **Branch**: `main`.
+5. Set **Main file path**: `app.py`.
+6. Set **App URL**: Choose a custom subdomain (e.g., `ai-resume-analyzer.streamlit.app`).
+
+### Step 3: Configure Cloud Secrets (Optional for Generative AI)
+> **Note:** An API key is optional! If you don't provide one, the app will run completely smoothly in local rule-based NLP and TF-IDF matching mode.
+
+If you wish to enable Google Gemini or OpenAI in production:
+1. In the Streamlit deployment screen, expand **"Advanced settings"** -> **"Secrets"** (or go to your app settings after deploying -> **Secrets**).
+2. Paste the following TOML configuration (see `.streamlit/secrets.toml.example`):
+   ```toml
+   # Google Gemini API Key (Recommended - https://aistudio.google.com/)
+   GEMINI_API_KEY = "your_actual_gemini_api_key_here"
+
+   # Preferred AI Provider ("gemini" or "openai")
+   LLM_PROVIDER = "gemini"
+   ```
+3. Click **"Save"**.
+
+### Step 4: Launch and Deploy
+1. Click **"Deploy!"**.
+2. Streamlit Cloud will automatically:
+   - Install all required Python packages from `requirements.txt`.
+   - Install required Linux system packages (`libgl1`, `libglib2.0-0`) from `packages.txt` for OCR engine support.
+   - Apply the clean SaaS custom theme from `.streamlit/config.toml`.
+   - Initialize the SQLite database and sample resume documents automatically.
+3. Your app is now live with a shareable public URL!
+
+---
+
 ## 🧪 Automated Testing
 
 Verify all components (SQLite, PyMuPDF, RapidOCR fallback, Regex boundary matching, ATS scoring, TF-IDF cosine similarity, and Local NLP) with the test suite:

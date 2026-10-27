@@ -15,7 +15,7 @@ Keys are never logged or hardcoded.
 import os
 import json
 import requests
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any, Optional, Tuple
 from dotenv import load_dotenv
 
 # Explicitly locate and load .env from the project root
@@ -50,9 +50,9 @@ def get_configured_api_key(custom_key: Optional[str] = None) -> Tuple_Key_Provid
     try:
         import streamlit as st
         if hasattr(st, "secrets"):
-            gemini_key = str(st.secrets.get("GEMINI_API_KEY", "")).strip()
-            openai_key = str(st.secrets.get("OPENAI_API_KEY", "")).strip()
-            preferred_provider = str(st.secrets.get("LLM_PROVIDER", "gemini")).lower()
+            gemini_key = str(st.secrets.get("GEMINI_API_KEY", st.secrets.get("gemini_api_key", ""))).strip()
+            openai_key = str(st.secrets.get("OPENAI_API_KEY", st.secrets.get("openai_api_key", ""))).strip()
+            preferred_provider = str(st.secrets.get("LLM_PROVIDER", st.secrets.get("llm_provider", "gemini"))).lower()
     except Exception:
         pass
 
@@ -97,6 +97,10 @@ def call_gemini_api(api_key: str, prompt: str) -> Optional[Tuple[Dict[str, Any],
     """
     # Priority cascade: highly responsive models with generous free tiers
     candidate_models = [
+        "gemini-2.5-flash",
+        "gemini-2.0-flash",
+        "gemini-1.5-flash",
+        "gemini-1.5-pro",
         "gemini-3.1-flash-lite",
         "gemini-3.6-flash",
         "gemini-3.7-flash",

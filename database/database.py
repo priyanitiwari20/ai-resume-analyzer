@@ -27,6 +27,7 @@ def get_db_connection(db_path: Optional[str] = None) -> sqlite3.Connection:
     Sets row_factory to sqlite3.Row so columns can be accessed by name like dictionaries.
     """
     path = db_path or DEFAULT_DB_PATH
+    os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
     conn = sqlite3.connect(path, check_same_thread=False)
     conn.row_factory = sqlite3.Row
     return conn
